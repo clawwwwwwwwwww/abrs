@@ -1,0 +1,26 @@
+{
+  "object": "whatsapp_business_account",
+  "entry": [{
+    "id": "WHATSAPP-BUSINESS-ACCOUNT-ID",
+    "changes": [{
+      "value": {
+        "messaging_product": "whatsapp",
+        "metadata": {"display_phone_number": "15550009999", "phone_number_id": "PHONE_ID"},
+        "messages": [{
+          "from": "15550000001",
+          "id": "wamid.TEST_BUTTON_REPLY",
+          "timestamp": "1734000200",
+          "type": "interactive",
+          "interactive": {
+            "type": "button_reply",
+            "button_reply": {
+              "id": "confirm:appt-abc123",
+              "title": "Confirm"
+            }
+          }
+        }]
+      },
+      "field": "messages"
+    }]
+  }]
+}

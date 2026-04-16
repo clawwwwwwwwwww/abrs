@@ -1,0 +1,27 @@
+{
+  "object": "whatsapp_business_account",
+  "entry": [{
+    "id": "WHATSAPP-BUSINESS-ACCOUNT-ID",
+    "changes": [{
+      "value": {
+        "messaging_product": "whatsapp",
+        "metadata": {"display_phone_number": "15550009999", "phone_number_id": "PHONE_ID"},
+        "messages": [{
+          "from": "15550000001",
+          "id": "wamid.TEST_LIST_REPLY",
+          "timestamp": "1734000100",
+          "type": "interactive",
+          "interactive": {
+            "type": "list_reply",
+            "list_reply": {
+              "id": "service:Consultation",
+              "title": "Consultation",
+              "description": "30 min"
+            }
+          }
+        }]
+      },
+      "field": "messages"
+    }]
+  }]
+}

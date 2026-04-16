@@ -1,0 +1,25 @@
+services:
+  - name: "Consultation"
+    duration_minutes: 30
+  - name: "Treatment"
+    duration_minutes: 60
+  - name: "Follow-up"
+    duration_minutes: 15
+
+# 24h clock, omit a day to mark it closed
+business_hours:
+  mon: { open: "09:00", close: "17:00" }
+  tue: { open: "09:00", close: "17:00" }
+  wed: { open: "09:00", close: "17:00" }
+  thu: { open: "09:00", close: "17:00" }
+  fri: { open: "09:00", close: "17:00" }
+
+location:
+  address: "123 Main St, Suite 4, San Francisco CA 94102"
+  parking: "Free lot behind the building, enter from Pine St."
+  access_notes: "Buzz suite #4 at the front door."
+  review_url: "https://g.page/r/EXAMPLE/review"
+
+owner:
+  name: "Owner"
+  whatsapp: "+14155551234"

@@ -1,0 +1,32 @@
+# Render Blueprint — single web service on the free plan.
+# Postgres is provided externally by Neon (free, no credit card).
+# Reminders fire via cron-job.org hitting POST /cron/tick every 15 minutes.
+
+services:
+  - type: web
+    name: abrs
+    runtime: python
+    plan: free
+    region: oregon                    # change to nearest if you prefer
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash scripts/start.sh
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      # Set these in the Render dashboard (NOT here, since they are secrets):
+      #   DATABASE_URL          = postgres URL from Neon (use "Pooled connection")
+      #   STUB_MODE             = 0
+      #   DISABLE_SCHEDULER     = 1            (we use external cron in prod)
+      #   CRON_SECRET           = <random hex>  (also set on cron-job.org)
+      #   OWNER_WHATSAPP        = +1...
+      #   WHATSAPP_TOKEN, WHATSAPP_PHONE_NUMBER_ID,
+      #   WHATSAPP_VERIFY_TOKEN, WHATSAPP_APP_SECRET
+      #   GOOGLE_CALENDAR_ID
+      #   GOOGLE_CREDS          (full service-account JSON, single line)
+      - key: BUSINESS_CONFIG_PATH
+        value: config/business.yaml
+      - key: TZ
+        value: America/Los_Angeles
+      - key: PYTHON_VERSION
+        value: 3.13.2
